@@ -62,17 +62,14 @@ const Hero: React.FC = () => {
                 
                 {/* Profile Image Container - Rounded Rectangle */}
                 <div className="relative w-full h-full rounded-3xl overflow-hidden border-8 border-white shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                    {/* 
-                      !!! IMPORTANT !!!
-                      Please save your bust shot image as 'bust_shot.jpg' in the public/root folder.
-                    */}
+                    {/* Self portrait served from public/miharakentojiga */}
                     <img 
-                      src="/bust_shot.jpg"
+                      src="/miharakentojiga/1000005188.png"
                       onError={(e) => {
                         e.currentTarget.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=1000";
-                        e.currentTarget.alt = "Please add bust_shot.jpg to public folder";
+                        e.currentTarget.alt = "Please add 1000005188.png to public/miharakentojiga";
                       }}
-                      alt="Kento Mihara Bust Shot" 
+                      alt="Kento Mihara Self Portrait" 
                       className="w-full h-full object-cover"
                     />
                 </div>
