@@ -21,10 +21,10 @@ const About: React.FC = () => {
                    Please place your standing image as 'standing_shot.jpg' in the public folder.
                 */}
                 <img 
-                  src="/standing_shot.jpg"
+                  src="/miharakentojiga/1000005188.png"
                   onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800";
-                    e.currentTarget.alt = "Please add standing_shot.jpg to public folder";
+                    e.currentTarget.alt = "Please add 1000005188.png to public/miharakentojiga";
                   }}
                   alt="Kento Mihara Full Body"
                   className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
