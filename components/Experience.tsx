@@ -1,5 +1,5 @@
 import React from 'react';
-import { Video, Smartphone, PenTool, Globe } from 'lucide-react';
+import { Video, Smartphone, Globe } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const experiences = [
@@ -30,31 +30,15 @@ const Experience: React.FC = () => {
   const services = [
     {
         icon: <Video className="w-8 h-8 text-white" />,
-        title: "動画編集",
-        price: "30,000円〜",
+        title: "YouTubeマーケティング",
+        price: "準備中",
         color: "bg-red-500",
-        descText: "YouTube動画、PR動画など。視聴維持率を意識した高品質な編集を提供します。",
+        descText: "大手チャンネル（登録者200万人規模）での実務経験と、200万回再生を叩き出した実績に基づき、感覚に頼らない「論理的なYouTube運用」をサポートします。企画立案、視聴維持率の分析、そしてAIを活用した効率化まで、エンジニア視点を取り入れたマーケティング戦略を構築中です。",
         visual: (
             <div className="rounded-lg overflow-hidden h-32 border border-gray-100 group">
                 <img
                     src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800"
                     alt="Video Editing Workspace"
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-            </div>
-        )
-    },
-    {
-        icon: <PenTool className="w-8 h-8 text-white" />,
-        title: "デザイン制作",
-        price: "5,000円〜",
-        color: "bg-orange-500",
-        descText: "サムネイル（実績200枚以上）、バナー、各種デザイン素材の制作。",
-        visual: (
-            <div className="rounded-lg overflow-hidden h-32 border border-gray-100 group">
-                <img
-                    src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800"
-                    alt="Creative Design Art"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
             </div>
@@ -121,9 +105,9 @@ const Experience: React.FC = () => {
                 <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Service Menu</h2>
                 <p className="mt-4 text-xl text-gray-500">提供可能なサービスと料金目安</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
                 {services.map((service, idx) => (
-                    <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                    <div key={idx} className="bg-white rounded-xl shadow-lg overflow-hidden hover:transform hover:-translate-y-1 transition-all duration-300 flex flex-col h-full w-full max-w-sm">
                         <div className={`${service.color} p-6 flex justify-center`}>
                             {service.icon}
                         </div>

@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <footer id="contact" className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start mb-12 gap-8">
           <div className="text-center md:text-left">
             <h2 className="text-3xl font-bold mb-4 tracking-tighter">Kento.M</h2>
             <p className="text-gray-400 text-sm mb-6 max-w-xs">
