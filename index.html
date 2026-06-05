@@ -7,8 +7,51 @@
     <meta property="og:title" content="Kento Mihara" />
     <meta property="og:site_name" content="Kento.M" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // 配色・タイポ・モーションは全てここで定義する（Vite移行までの暫定）
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // アクセント1色: Matsue Sunset AI / 島根の夕日に接続する暖色（琥珀〜テラコッタ系）
+              sunset: {
+                50:  '#fdf6ef',
+                100: '#fae9d7',
+                200: '#f3cda8',
+                300: '#ebab72',
+                400: '#e28a45',
+                500: '#d97032',
+                600: '#c25a28',
+                700: '#a14522',
+                800: '#823922',
+                900: '#6b301f',
+              },
+            },
+            fontFamily: {
+              // 日本語本文は Noto Sans JP 継続。英字見出しは Space Grotesk。
+              sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+              display: ['"Space Grotesk"', '"Noto Sans JP"', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in-up': {
+                '0%':   { opacity: '0', transform: 'translateY(24px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'bounce-slow': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%':      { transform: 'translateY(-10px)' },
+              },
+            },
+            animation: {
+              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+              'bounce-slow': 'bounce-slow 3.5s ease-in-out infinite',
+            },
+          },
+        },
+      };
+    </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
       body {
         font-family: 'Noto Sans JP', sans-serif;
       }
@@ -20,6 +63,9 @@
       .no-scrollbar {
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
+      }
+      html {
+        scroll-behavior: smooth;
       }
     </style>
   <script type="importmap">
@@ -33,9 +79,8 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-gray-50 text-gray-800 antialiased selection:bg-indigo-500 selection:text-white">
+  <body class="bg-white text-neutral-800 antialiased selection:bg-sunset-500 selection:text-white">
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
