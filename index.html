@@ -8,29 +8,35 @@
     <meta property="og:site_name" content="Kento.M" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      // 配色・タイポ・モーションは全てここで定義する（Vite移行までの暫定）
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              // アクセント1色: Matsue Sunset AI / 島根の夕日に接続する暖色（琥珀〜テラコッタ系）
-              sunset: {
-                50:  '#fdf6ef',
-                100: '#fae9d7',
-                200: '#f3cda8',
-                300: '#ebab72',
-                400: '#e28a45',
-                500: '#d97032',
-                600: '#c25a28',
-                700: '#a14522',
-                800: '#823922',
-                900: '#6b301f',
+              // Atmospheric Glass design system
+              glass: {
+                50:  '#dae2fd',
+                100: '#c4c7c8',
+                200: '#8e9192',
+                300: '#444748',
+                400: '#2d3449',
+                500: '#222a3d',
+                600: '#171f33',
+                700: '#131b2e',
+                800: '#0b1326',
+                900: '#060e20',
+              },
+              accent: {
+                100: '#d0e4ff',
+                200: '#adc9eb',
+                300: '#9fbbdd',
+                400: '#304b68',
+                500: '#2d4965',
+                600: '#14324e',
               },
             },
             fontFamily: {
-              // 日本語本文は Noto Sans JP 継続。英字見出しは Space Grotesk。
-              sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
-              display: ['"Space Grotesk"', '"Noto Sans JP"', 'sans-serif'],
+              sans: ['Inter', '"Noto Sans JP"', 'system-ui', 'sans-serif'],
+              display: ['Inter', '"Noto Sans JP"', 'sans-serif'],
             },
             keyframes: {
               'fade-in-up': {
@@ -51,9 +57,23 @@
       };
     </script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
       body {
-        font-family: 'Noto Sans JP', sans-serif;
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.07);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      }
+      .glass-card-elevated {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
       }
       /* Hide scrollbar for Chrome, Safari and Opera */
       .no-scrollbar::-webkit-scrollbar {
@@ -61,8 +81,8 @@
       }
       /* Hide scrollbar for IE, Edge and Firefox */
       .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
       }
       html {
         scroll-behavior: smooth;
@@ -80,7 +100,7 @@
 }
 </script>
 </head>
-  <body class="bg-white text-neutral-800 antialiased selection:bg-sunset-500 selection:text-white">
+  <body class="bg-glass-800 text-glass-50 antialiased selection:bg-accent-200 selection:text-glass-800">
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
